@@ -1,0 +1,12 @@
+streamlit
+requests
+beautifulsoup4
+PyPDF2
+langchain
+langchain-community
+langchain-ollama
+langchain-huggingface
+langchain-text-splitters
+sentence-transformers
+faiss-cpu
+pytest
