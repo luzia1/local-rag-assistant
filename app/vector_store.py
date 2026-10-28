@@ -6,7 +6,7 @@ def get_embeddings():
     return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
 
 def get_vector_store():
-    index_file=FAISS_INDEX_DIR / "index.faiss"
+    index_file = FAISS_INDEX_DIR / "index.faiss"
 
     if not index_file.exists():
         return None
@@ -18,7 +18,7 @@ def get_vector_store():
         )
 
 def add_documents(chunks):
-    vector_store=get_vector_store()
+    vector_store = get_vector_store()
 
     if vector_store is None:
         vector_store=FAISS.from_documents(
@@ -30,10 +30,10 @@ def add_documents(chunks):
 
     vector_store.save_local(str(FAISS_INDEX_DIR))
 
-    return "Documento indexado com sucesso."
+    return "Document successfully indexed."
 
 def search(question):
-    vector_store=get_vector_store()
+    vector_store = get_vector_store()
 
     if vector_store is None:
         return []

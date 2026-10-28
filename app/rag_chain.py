@@ -7,12 +7,12 @@ def get_llm():
 
 def answer(query, results):
 
-    context="\n\n".join(
+    context = "\n\n".join(
             result.page_content
             for result in results
         )
     
-    prompt=f"""
+    prompt = f"""
     Based on the following context, answer the question.
     
     Context:

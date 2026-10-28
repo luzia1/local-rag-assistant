@@ -30,9 +30,11 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 def create_chunks(text, origin):
+    if not text:
+        raise ValueError("Text cannot be empty.")
+    
     splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
     texts = splitter.split_text(text)
-
     chunks = []
 
     for chunk in texts:
