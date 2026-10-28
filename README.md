@@ -61,6 +61,9 @@ app/
 
 storage/
 └── faiss_index/
+
+tests/
+└── test_ingestion.py
 ```
 
 ## Notes
